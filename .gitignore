@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Assets (downloaded by download_cards.py — not committed to repo)
+assets/01_comum/
+assets/02_incomum/
+assets/03_raras/
+assets/04_duplo_raras/
+assets/05_arte_secreta/
+assets/06_duplo_arte_secreta/
+assets/07_legendaria/
+assets/index.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.tmp
