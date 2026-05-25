@@ -8,11 +8,16 @@ Requires:
     pip install requests
 """
 
+import io
 import json
 import os
 import sys
 import time
 import requests
+
+# Ensure stdout supports Unicode (Pokémon names contain ♀/♂ etc.)
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 # ── Rarity → folder mapping (FR-002) ──────────────────────────────────────
 RARITY_MAP = {
@@ -31,6 +36,8 @@ RARITY_MAP = {
     "Rare Rainbow":              "06_duplo_arte_secreta",
     "Rare Secret":               "06_duplo_arte_secreta",
     "Hyper Rare":                "07_legendaria",
+    # Scarlet & Violet era full-art trainers
+    "Ultra Rare":                "04_duplo_raras",
 }
 
 API_URL   = "https://api.pokemontcg.io/v2/cards"
@@ -110,7 +117,7 @@ def main():
             print(f"[skip]  {card_id}  {name:<30} (already exists)")
             skipped_existing += 1
         else:
-            print(f"[download] {card_id}  {name:<30} → {rel_path}")
+            print(f"[download] {card_id}  {name:<30} -> {rel_path}")
             try:
                 download_image(img_url, dest_path)
                 downloaded += 1

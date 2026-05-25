@@ -112,8 +112,8 @@ All three tasks touch different files and can start immediately in parallel.
 **Purpose**: Validation, accessibility, and end-to-end verification.
 
 - [x] T022 [P] Add `title` attribute (card name) to each card `<img>` element in `js/booster-view.js` and `js/collection-view.js` for hover tooltip and screen-reader accessibility
-- [ ] T023 Validate all responsive breakpoints: open the game in browser DevTools device emulation at 320 px, 768 px, and 1280 px; confirm no horizontal scrollbar, no broken layouts, all controls reachable; fix any overflow or layout issues in `css/booster.css` and `css/collection.css` (constitution gate IV, SC-007)
-- [ ] T024 Run the `quickstart.md` validation checklist end-to-end: run `python download_cards.py`, serve with `python -m http.server 8080`, open 3 packs, navigate to collection, reload page, confirm all 18+ cards with correct copy counts; confirm `assets/index.json` exists and is valid
+- [x] T023 Validate all responsive breakpoints: open the game in browser DevTools device emulation at 320 px, 768 px, and 1280 px; confirm no horizontal scrollbar, no broken layouts, all controls reachable; fix any overflow or layout issues in `css/booster.css` and `css/collection.css` (constitution gate IV, SC-007)
+- [x] T024 Run the `quickstart.md` validation checklist end-to-end: run `python download_cards.py`, serve with `python -m http.server 8080`, open 3 packs, navigate to collection, reload page, confirm all 18+ cards with correct copy counts; confirm `assets/index.json` exists and is valid
 
 ---
 
