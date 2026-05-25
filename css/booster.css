@@ -1,7 +1,7 @@
 /* ── Booster screen layout ── */
 #booster-screen {
   padding: var(--spacing-xl) var(--spacing-md);
-  max-width: 72rem;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
@@ -15,28 +15,27 @@
 .card-slots {
   display: grid;
   gap: var(--spacing-md);
-  justify-items: center;
 
   /* Mobile: 2 columns */
-  grid-template-columns: repeat(2, var(--card-width));
+  grid-template-columns: repeat(2, 1fr);
 }
 
 @media (min-width: 481px) {
   .card-slots {
-    grid-template-columns: repeat(3, var(--card-width));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 768px) {
   .card-slots {
-    grid-template-columns: repeat(6, var(--card-width));
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 /* ── 3D flip card ── */
 .card-container {
-  width: var(--card-width);
-  height: calc(var(--card-width) * var(--card-aspect));
+  width: 100%;
+  aspect-ratio: 1 / var(--card-aspect);
   perspective: 800px;
   cursor: default;
 }
