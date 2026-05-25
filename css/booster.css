@@ -1,0 +1,106 @@
+/* ── Booster screen layout ── */
+#booster-screen {
+  padding: var(--spacing-xl) var(--spacing-md);
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.booster-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ── Card slot grid ── */
+.card-slots {
+  display: grid;
+  gap: var(--spacing-md);
+
+  /* Mobile: 2 columns */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 481px) {
+  .card-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-slots {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ── 3D flip card ── */
+.card-container {
+  width: 100%;
+  aspect-ratio: 1 / var(--card-aspect);
+  perspective: 800px;
+  cursor: default;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 600ms ease;
+}
+
+.card-container.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--card-radius);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-back {
+  background-color: #0d1b2a;
+  background-image:
+    radial-gradient(circle at 50% 50%, #1a3a5c 0%, #0d1b2a 70%);
+  border: 2px solid #1e3a5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  user-select: none;
+}
+
+.card-back::after {
+  content: "⬡";
+  color: #2a6a9a;
+  font-size: 3rem;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background-color: #111;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  display: block;
+}
+
+/* ── Rarity glow on reveal ── */
+.card-container[data-rarity="07_legendaria"] .card-front {
+  box-shadow: 0 0 18px 4px gold;
+}
+.card-container[data-rarity="06_duplo_arte_secreta"] .card-front {
+  box-shadow: 0 0 14px 3px #c084fc;
+}
+.card-container[data-rarity="05_arte_secreta"] .card-front {
+  box-shadow: 0 0 10px 2px #38bdf8;
+}
+.card-container[data-rarity="04_duplo_raras"] .card-front {
+  box-shadow: 0 0 8px 2px #f97316;
+}

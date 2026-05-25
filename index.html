@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon TCG 151 — Abrir Boosters</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/booster.css">
+  <link rel="stylesheet" href="css/collection.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <span class="site-title">Pokémon TCG 151</span>
+    <nav class="site-nav">
+      <button class="nav-btn active" id="nav-booster" aria-pressed="true">Abrir Booster</button>
+      <button class="nav-btn" id="nav-collection" aria-pressed="false">Ver Coleção</button>
+    </nav>
+  </header>
+
+  <div id="storage-warning" class="storage-warning hidden" role="alert">
+    ⚠️ Modo privado detectado — sua coleção não será salva ao fechar o navegador.
+  </div>
+
+  <!-- Screen 1: Booster Opening -->
+  <section id="booster-screen" class="screen active">
+    <div class="booster-actions">
+      <button id="btn-open-booster" class="btn-primary">Abrir Booster</button>
+    </div>
+    <div id="card-slots" class="card-slots" aria-label="Cartas do pacote">
+      <!-- 6 card slots injected by booster-view.js -->
+    </div>
+  </section>
+
+  <!-- Screen 2: Collection View -->
+  <section id="collection-screen" class="screen hidden">
+    <div id="progress-panel" class="progress-panel" aria-label="Progresso da coleção">
+      <!-- Rendered by collection-view.js -->
+    </div>
+    <div id="filter-bar" class="filter-bar" role="group" aria-label="Filtrar por raridade">
+      <!-- Rendered by collection-view.js -->
+    </div>
+    <div id="collection-grid" class="collection-grid" aria-label="Grade da coleção">
+      <!-- Rendered by collection-view.js -->
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
